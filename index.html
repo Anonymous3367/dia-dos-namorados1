@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Feliz Dia dos Namorados</title>
+  <style>
+    body {
+      margin: 0;
+      background: #fff0f5;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding: 50px;
+      overflow: hidden;
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    h1 {
+      color: #d6336c;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+      user-select: none;
+    }
+
+    h1:hover {
+      transform: scale(1.1);
+    }
+
+    .mensagem {
+      margin-top: 40px;
+      font-size: 1.5rem;
+      color: #333;
+      flex-grow: 1;
+    }
+
+    .coracao {
+      position: absolute;
+      font-size: 2rem;
+      color: red;
+      animation: subir 3s ease-out forwards;
+      pointer-events: none;
+    }
+
+    @keyframes subir {
+      0% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(-200px) scale(1.5);
+      }
+    }
+
+    footer {
+      font-size: 0.9rem;
+      color: #999;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 onclick="espalharCoracoes()">Renata Cristina Couto</h1>
+
+  <div class="mensagem">
+    Meu amor, cada momento ao seu lado é um presente. <br />
+    Te amo hoje, amanhã e para sempre. 💖<br />
+    Feliz Dia dos Namorados!
+  </div>
+
+  <footer>Desenvolvido por Guilherme Alecrim Developer CSS HTML.</footer>
+
+  <script>
+    function espalharCoracoes() {
+      for (let i = 0; i < 30; i++) {
+        const coracao = document.createElement('div');
+        coracao.className = 'coracao';
+        coracao.textContent = '❤️';
+        coracao.style.left = Math.random() * 100 + 'vw';
+        coracao.style.top = Math.random() * 100 + 'vh';
+        document.body.appendChild(coracao);
+
+        setTimeout(() => {
+          coracao.remove();
+        }, 3000);
+      }
+    }
+  </script>
+</body>
+</html>
